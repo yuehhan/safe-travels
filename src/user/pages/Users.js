@@ -17,6 +17,11 @@ const Users = () => {
           // process.env.REACT_APP_BACKEND_URL + '/users'
         );
 
+
+        //HOOK TO S3 HERE
+        //npm install aws-sdk and use amazon's code here
+        //import aws on the top
+
         setLoadedUsers(responseData.users);
       } catch (err) {}
     };

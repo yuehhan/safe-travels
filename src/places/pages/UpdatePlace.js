@@ -40,8 +40,7 @@ const UpdatePlace = () => {
     const fetchPlace = async () => {
       try {
         const responseData = await sendRequest(
-          `https://lit-basin-67417.herokuapp.com/api/places/${placeId}`
-          // `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`
+          `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`
         );
         setLoadedPlace(responseData.place);
         setFormData(
