@@ -15,9 +15,8 @@ const UserPlaces = () => {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        console.log(`${process.env.REACT_APP_BACKEND_URL}/places/user/${userId}`)
         const responseData = await sendRequest(
-          `https://lit-basin-67417.herokuapp.com/places/user/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/places/user/${userId}`
         );
         setLoadedPlaces(responseData.places);
       } catch (err) {}

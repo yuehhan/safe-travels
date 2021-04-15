@@ -13,7 +13,6 @@ export const useHttpClient = () => {
       activeHttpRequests.current.push(httpAbortCtrl);
 
       try {
-        console.log('url: ', url)
         const response = await fetch(url, {
           method,
           body,
@@ -34,7 +33,6 @@ export const useHttpClient = () => {
         setIsLoading(false);
         return responseData;
       } catch (err) {
-        console.log('in http-hook: ', err)
         setError(err.message);
         setIsLoading(false);
         throw err;
