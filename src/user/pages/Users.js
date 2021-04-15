@@ -13,10 +13,8 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const responseData = await sendRequest(
-          'https://lit-basin-67417.herokuapp.com/api/users'
-          // process.env.REACT_APP_BACKEND_URL + '/users'
+          process.env.REACT_APP_BACKEND_URL + '/users'
         );
-
 
         //HOOK TO S3 HERE
         //npm install aws-sdk and use amazon's code here
