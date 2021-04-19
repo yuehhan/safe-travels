@@ -12,7 +12,8 @@ body {
   margin: 0;
   background-image:linear-gradient(20deg, #0050FF, #8FB2FF);
   background-repeat: no-repeat;
-  height:100vh;
+  min-height:100vh;
+  height:100%;
 }
 
 .slide-in-left-enter {
