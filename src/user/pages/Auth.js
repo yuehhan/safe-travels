@@ -70,8 +70,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          'https://lit-basin-67417.herokuapp.com/api/users/login',
-          // process.env.REACT_APP_BACKEND_URL + '/users/login',
+          process.env.REACT_APP_BACKEND_URL + '/users/login',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -91,7 +90,7 @@ const Auth = () => {
         formData.append('password', formState.inputs.password.value);
         formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
-          'https://lit-basin-67417.herokuapp.com/api/users/signup',
+          process.env.REACT_APP_BACKEND_URL + '/users/signup',
           'POST',
           formData
         );
@@ -106,7 +105,7 @@ const Auth = () => {
       <ErrorModal error={error} onClear={clearError} />
       <Card className="authentication">
         {isLoading && <LoadingSpinner asOverlay />}
-        <h2>Login Required</h2>
+        <h2>login required</h2>
         <hr />
         <form onSubmit={authSubmitHandler}>
           {!isLoginMode && (
@@ -114,9 +113,9 @@ const Auth = () => {
               element="input"
               id="name"
               type="text"
-              label="Your Name"
+              label="name"
               validators={[VALIDATOR_REQUIRE()]}
-              errorText="Please enter a name."
+              errorText="please enter a name."
               onInput={inputHandler}
             />
           )}
@@ -125,33 +124,33 @@ const Auth = () => {
               center
               id="image"
               onInput={inputHandler}
-              errorText="Please provide an image."
+              errorText="please provide an image."
             />
           )}
           <Input
             element="input"
             id="email"
             type="email"
-            label="E-Mail"
+            label="e-mail"
             validators={[VALIDATOR_EMAIL()]}
-            errorText="Please enter a valid email address."
+            errorText="please enter a valid email address."
             onInput={inputHandler}
           />
           <Input
             element="input"
             id="password"
             type="password"
-            label="Password"
+            label="password"
             validators={[VALIDATOR_MINLENGTH(6)]}
-            errorText="Please enter a valid password, at least 6 characters."
+            errorText="please enter a valid password, at least 6 characters."
             onInput={inputHandler}
           />
           <Button type="submit" disabled={!formState.isValid}>
-            {isLoginMode ? 'LOGIN' : 'SIGNUP'}
+            {isLoginMode ? 'login' : 'signup'}
           </Button>
         </form>
         <Button inverse onClick={switchModeHandler}>
-          SWITCH TO {isLoginMode ? 'SIGNUP' : 'LOGIN'}
+          switch to {isLoginMode ? 'signup' : 'login'}
         </Button>
       </Card>
     </React.Fragment>

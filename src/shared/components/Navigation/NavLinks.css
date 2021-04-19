@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   font-weight:600;
+  font-size:1.2rem;
 }
 
 .nav-links li {
@@ -38,6 +39,7 @@
   background: transparent;
   padding: 0.5rem;
   font: inherit;
+  border-radius:5px;
 }
 
 .nav-links button:focus {
@@ -48,6 +50,7 @@
 .nav-links button:active {
   background: #292929;
   color: white;
+  border-radius:5px;
 }
 
 @media (min-width: 768px) {

@@ -65,7 +65,8 @@ const UpdatePlace = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `https://lit-basin-67417.herokuapp.com/api/places/${placeId}`,
+        // `https://lit-basin-67417.herokuapp.com/api/places/${placeId}`,
+        `${process.env.REACT_APP_BACKEND_URL}/places/${placeId}`,
         'PATCH',
         JSON.stringify({
           title: formState.inputs.title.value,

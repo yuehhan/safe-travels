@@ -10,7 +10,9 @@ html {
 
 body {
   margin: 0;
-  background:#8FB2FF;
+  background-image:linear-gradient(20deg, #0050FF, #8FB2FF);
+  background-repeat: no-repeat;
+  height:100vh;
 }
 
 .slide-in-left-enter {
